@@ -18,6 +18,27 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Foco visible solo para teclado (ADA / WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+main:focus {
+  outline: none;
+}
+
 body {
   background: var(--color-navy);
   color: #ffffff;

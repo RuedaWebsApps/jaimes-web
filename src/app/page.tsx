@@ -47,7 +47,7 @@ const testimonials = [
 function OutlineButton({ children }: { children: React.ReactNode }) {
   return (
     <a
-      href={site.phoneHref}
+      href="/contacto"
       className="inline-block border-2 border-gold px-8 py-3 font-semibold uppercase tracking-wider text-white transition hover:bg-gold"
     >
       {children}
@@ -67,11 +67,11 @@ export default function Home() {
           <h1 className="font-serif text-4xl font-bold leading-tight text-gold-light md:text-[51px]">
             Jaimes Tax &amp; Insurance agency LLC.
           </h1>
-          <h5 className="mx-auto mt-6 max-w-2xl text-lg font-medium text-white md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-white md:text-xl">
             Más de 10 años ayudando a personas y pequeños negocios con impuestos, seguros, contabilidad y registros en Austin.
-          </h5>
+          </p>
           <a
-            href={site.phoneHref}
+            href="/contacto"
             className="mt-8 inline-block bg-gold px-8 py-4 font-semibold uppercase tracking-wider text-white transition hover:bg-gold-light"
           >
             Schedule a Free Consultation
@@ -80,7 +80,8 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="servicios" className="bg-beige pb-20 text-navy scroll-mt-24">
+      <section id="servicios" aria-labelledby="servicios-titulo" className="bg-beige pb-20 text-navy scroll-mt-24">
+        <h2 id="servicios-titulo" className="sr-only">Nuestros servicios</h2>
         <div className="mx-auto grid max-w-6xl gap-0 px-5 md:-mt-[10vw] md:grid-cols-3 relative z-10">
           {mainServices.map((s) => (
             <div key={s.title} className="paper relative">
@@ -98,7 +99,7 @@ export default function Home() {
           {extraServices.map((s) => (
             <div key={s.title} className="text-center">
               <Image src={s.icon} alt="" width={80} height={80} className="mx-auto mb-4 h-20 w-auto" />
-              <h5 className="text-lg font-semibold text-navy">{s.title}</h5>
+              <h3 className="text-lg font-semibold text-navy">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{s.text}</p>
             </div>
           ))}
@@ -106,7 +107,7 @@ export default function Home() {
 
         <div className="mt-14 text-center">
           <a
-            href="#contacto"
+            href="/contacto"
             className="inline-block bg-navy px-8 py-4 font-semibold uppercase tracking-wider text-gold transition hover:bg-blue"
           >
             Contáctanos para mas información
@@ -121,7 +122,7 @@ export default function Home() {
         style={{ background: "linear-gradient(180deg, #e0dad2 20%, #454a53 20%, #12273f 100%)" }}
       >
         <div className="mx-auto max-w-6xl px-5">
-          <Image src="/images/attorney-8-1.jpg" alt="Jaimes Tax & Insurance" width={1200} height={600} className="h-auto w-full" />
+          <Image src="/images/attorney-8-1.jpg" alt="Asesora de Jaimes Tax & Insurance atendiendo a una clienta, junto al logo de la empresa" width={1200} height={600} className="h-auto w-full" />
           <div className="mt-14 grid gap-10 md:grid-cols-2">
             <div className="md:pt-[2vw]">
               <h2 className="font-serif text-3xl font-bold leading-tight text-gold md:text-[41px]">
@@ -148,10 +149,10 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-1">
             <div className="pt-0 md:pt-[60px]">
-              <Image src="/images/attorney-9-1.jpg" alt="" width={600} height={800} className="h-auto w-full" />
+              <Image src="/images/attorney-9-1.jpg" alt="Persona revisando en una tableta los servicios de Jaimes Tax & Insurance junto a una calculadora" width={600} height={800} className="h-auto w-full" />
             </div>
             <div>
-              <Image src="/images/attorney-10-1.jpg" alt="" width={600} height={800} className="h-auto w-full" />
+              <Image src="/images/attorney-10-1.jpg" alt="Asesora reunida con una pareja de clientes en la oficina" width={600} height={800} className="h-auto w-full" />
             </div>
           </div>
           <div className="lg:pt-[90px]">
@@ -166,10 +167,10 @@ export default function Home() {
               {reasons.map((r) => (
                 <div key={r.title} className="flex gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold text-white">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12l5 5L19 7" /></svg>
+                    <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12l5 5L19 7" /></svg>
                   </span>
                   <div>
-                    <h4 className="font-serif text-xl font-bold text-white">{r.title}</h4>
+                    <h3 className="font-serif text-xl font-bold text-white">{r.title}</h3>
                     <p className="mt-1 leading-relaxed text-white/90">{r.text}</p>
                   </div>
                 </div>
@@ -195,7 +196,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative min-h-[40vw] md:col-span-3 md:min-h-0">
-            <Image src="/images/attorney-11-1.jpg" alt="" fill className="object-cover" sizes="(min-width: 768px) 60vw, 100vw" />
+            <Image src="/images/attorney-11-1.jpg" alt="Asesora entregando una tarjeta a una clienta sonriente" fill className="object-cover" sizes="(min-width: 768px) 60vw, 100vw" />
           </div>
         </div>
       </section>
@@ -207,7 +208,7 @@ export default function Home() {
             <div className="paper relative">
               <div className="absolute inset-0 bg-[rgba(202,182,161,0.7)]" />
               <div className="relative px-8 py-10 text-center md:p-16">
-                <h3 className="font-serif text-2xl font-bold text-navy">Llama ahora para una consulta gratuita</h3>
+                <h2 className="font-serif text-2xl font-bold text-navy">Llama ahora para una consulta gratuita</h2>
                 <a href={site.phoneHref} className="mt-4 block font-serif text-4xl font-bold text-navy hover:text-blue md:text-5xl">
                   {site.phone}
                 </a>
@@ -223,13 +224,17 @@ export default function Home() {
           <h2 className="text-center font-serif text-3xl font-bold text-gold md:text-[40px]">Lo Que Dicen Nuestros Clientes</h2>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             {testimonials.map((t) => (
-              <div key={t.author}>
-                <p className="mb-3 text-xl text-gold">★★★★★</p>
-                <p className="text-lg font-medium leading-relaxed text-white">&ldquo;{t.quote}&rdquo;</p>
-                <p className="mt-3 text-lg text-white">– <em>{t.author}</em></p>
-              </div>
+              <figure key={t.author}>
+                <p className="mb-3 text-xl text-gold" role="img" aria-label="5 de 5 estrellas">★★★★★</p>
+                <blockquote className="text-lg font-medium leading-relaxed text-white">&ldquo;{t.quote}&rdquo;</blockquote>
+                <figcaption className="mt-3 text-lg text-white">– <em>{t.author}</em></figcaption>
+              </figure>
             ))}
           </div>
+          {/* FTC Endorsement Guides (16 CFR Part 255) */}
+          <p className="mt-10 text-center text-xs text-white/60">
+            Testimonios de clientes reales. Las experiencias y resultados individuales pueden variar.
+          </p>
         </div>
       </section>
     </>
