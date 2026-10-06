@@ -47,7 +47,7 @@ const testimonials = [
 function OutlineButton({ children }: { children: React.ReactNode }) {
   return (
     <a
-      href="/contacto"
+      href="/#contacto"
       className="inline-block border-2 border-gold px-8 py-3 font-semibold uppercase tracking-wider text-white transition hover:bg-gold"
     >
       {children}
@@ -71,7 +71,7 @@ export default function Home() {
             Más de 10 años ayudando a personas y pequeños negocios con impuestos, seguros, contabilidad y registros en Austin.
           </p>
           <a
-            href="/contacto"
+            href="/#contacto"
             className="mt-8 inline-block bg-gold px-8 py-4 font-semibold uppercase tracking-wider text-white transition hover:bg-gold-light"
           >
             Schedule a Free Consultation
@@ -107,7 +107,7 @@ export default function Home() {
 
         <div className="mt-14 text-center">
           <a
-            href="/contacto"
+            href="/#contacto"
             className="inline-block bg-navy px-8 py-4 font-semibold uppercase tracking-wider text-gold transition hover:bg-blue"
           >
             Contáctanos para mas información
